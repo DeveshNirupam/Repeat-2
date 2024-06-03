@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.my-btn{
+    background-color: crimson;
+    color: white;
+    padding: 10px;
+}
