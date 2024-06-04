@@ -3,7 +3,7 @@ import classes from './login.module.css'
 
 const Login = () => {
   return (
-    <div className=" flex justify-center items-center mt-40" >
+    <div className=" flex justify-center items-center  mb-20" >
 
       <div className=" mx-auto my-6 bg-slate-100">
       
