@@ -74,9 +74,9 @@ const Navbar = () => {
             </Link>
             <a
               className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
-              href="#"
+              href="/todo-list"
             >
-              Account
+             ToDo-list
             </a>
             <a
               className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
