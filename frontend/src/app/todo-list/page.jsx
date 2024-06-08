@@ -64,7 +64,7 @@ const Todolist = () => {
                 <input onKeyDown={addNewTodo} type="text" className=' w-full border border-blue-500 px-5 py-2 rounded-md ' placeholder=' Add a new Todo' />
 
 
-                <div className=' p-4'>
+                <div className=' p-4 h-[50vh]  overflow-auto'>
 
                     {
                         taskList.map((obj, index) => {
