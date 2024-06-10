@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './vercel.svg';
+import { Button } from '@mantine/core';
 
 const Home = () => {
   return (
@@ -12,6 +13,8 @@ const Home = () => {
       <img src="/next.svg" alt="" />
 
       <img src={logo.src} alt="" />
+
+      <Button>Hello Mantine!</Button>
 
 
 

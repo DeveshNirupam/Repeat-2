@@ -199,14 +199,7 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
-    {/* ========== END HEADER ========== */}
-    {/* ========== MAIN CONTENT ========== */}
-    <main id="content">
-      <div className="max-w-[85rem] mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        {/* your content goes here ... */}
-      </div>
-    </main>
-    {/* ========== END MAIN CONTENT ========== */}
+    
   </>
   
   )
