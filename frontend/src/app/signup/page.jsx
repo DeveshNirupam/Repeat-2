@@ -1,6 +1,8 @@
 'use client';
+import axios from 'axios';
 import { useFormik } from 'formik'
 import React from 'react'
+import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
 
@@ -17,8 +19,8 @@ const SignupSchema = Yup.object().shape({
     .matches(/[A-Z]/, 'Password must contain at least one uppercase character')
     .matches(/[0-9]/, 'Password must contain at least one digit')
     .matches(/\W/, 'Password must contain at least one special character'),
-   confirmPassword: Yup.string().required('Confirm Password is required')
-                     .oneOf([Yup.ref('password'), null], 'Passwords must match')
+  confirmPassword: Yup.string().required('Confirm Password is required')
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
 const Signup = () => {
@@ -35,13 +37,20 @@ const Signup = () => {
     },
 
     onSubmit: (values, { resetForm }) => {                         //for delaying the form submission
-     
+      // setTimeout(() => {
+      console.log(values);
+      //   resetForm();    
+      // }, 3000);
 
-      setTimeout(() => {
-        console.log(values);
-        resetForm();
-        
-      }, 3000);
+      axios.post('http://localhost:5000/user/add', values) //for sending data to the server
+        .then((result) => {
+          console.log(result.status);
+          toast.success('User Register Successfully');
+          resetForm();
+        }).catch((err) => {
+          console.log(err);
+          toast.error('User Registration Failed');
+        });
 
     },
 
@@ -193,7 +202,7 @@ const Signup = () => {
                         {signupForm.errors.email}
                       </p>
                     )}
-                 
+
                 </div>
                 {/* End Form Group */}
                 {/* Form Group */}

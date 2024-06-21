@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-       <Toaster position="top-right" />
+       <Toaster position="top-center" />
        <MantineProvider>
 
         {children}
