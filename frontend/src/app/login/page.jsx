@@ -8,26 +8,22 @@ const Login = () => {
 
   //initialization
 
-  const loginForm = useFormik ({
+  const loginForm = useFormik({
 
     //initialization
     initialValues: {
-    email: '',
-    password: ''
-  },
+      email: '',
+      password: ''
+    },
+    // validationSchema: LoginSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    }
+
+  });
 
 
 
-
-
-
-
-  // validationSchema: LoginSchema,
-
-  })
-
-  
-    
 
 
 
@@ -102,8 +98,8 @@ const Login = () => {
                     <input
                       type="email"
                       id="email"
-                      onChange={loginForm.email}
-                      value={loginForm.email}
+                      onChange={loginForm.handleChange}
+                      value={loginForm.values.email}
 
                       className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       required=""
@@ -124,9 +120,9 @@ const Login = () => {
                   </div>
                   {
                     loginForm.touched.email && (
-                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                    {loginForm.errors.email}
-                  </p>
+                      <p className="hidden text-xs text-red-600 mt-2" id="password-error">
+                        {loginForm.errors.email}
+                      </p>
                     )}
                 </div>
                 {/* End Form Group */}
@@ -150,8 +146,8 @@ const Login = () => {
                     <input
                       type="password"
                       id="password"
-                      onChange={loginForm.password}
-                      value={loginForm.password}
+                      onChange={loginForm.handleChange}
+                      value={loginForm.values.password}
                       className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       required=""
                       aria-describedby="password-error"
@@ -169,13 +165,13 @@ const Login = () => {
                       </svg>
                     </div>
                     {
-                    loginForm.touched.password && (
-                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                    {loginForm.errors.password}
-                  </p>
-                    )}
+                      loginForm.touched.password && (
+                        <p className="hidden text-xs text-red-600 mt-2" id="password-error">
+                          {loginForm.errors.password}
+                        </p>
+                      )}
                   </div>
-                
+
                 </div>
                 {/* End Form Group */}
                 {/* Checkbox */}
