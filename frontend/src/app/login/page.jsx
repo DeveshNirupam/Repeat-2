@@ -2,6 +2,8 @@
 import React from 'react';
 import classes from './login.module.css'
 import { useFormik } from 'formik';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
@@ -18,6 +20,34 @@ const Login = () => {
     // validationSchema: LoginSchema,
     onSubmit: (values) => {
       console.log(values);
+      
+      axios.post('http://localhost:5000/user/authenticate', values)
+        .then((result) => {
+          console.log(result.status);
+          console.log(result.data);
+
+          if (result.status === 200) {
+            toast.success('Login Successful');
+          }
+          
+
+
+
+
+
+
+        })
+        .catch((err) => {
+          console.log(err);
+           if (err.response.status === 401){
+            toast.error('Invalid Credentials');
+          }
+          else {
+            toast.error('Login Failed');
+          }
+        })
+
+
     }
 
   });
