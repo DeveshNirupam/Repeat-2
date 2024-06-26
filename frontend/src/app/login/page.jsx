@@ -4,8 +4,11 @@ import classes from './login.module.css'
 import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
+
+  const router = useRouter();
 
 
   //initialization
@@ -28,6 +31,10 @@ const Login = () => {
 
           if (result.status === 200) {
             toast.success('Login Successful');
+
+            localStorage.setItem('user', JSON.stringify(result.data)); //set local storage
+            document.cookie = `token=${result.data.token}`;  //set cookie
+            router.push('/manage-users');
           }
           
 
