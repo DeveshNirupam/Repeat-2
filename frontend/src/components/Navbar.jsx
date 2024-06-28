@@ -72,18 +72,18 @@ const Navbar = () => {
             >
               Signup
             </Link>
-            <a
+            <Link
               className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
               href="/todo-list"
             >
              ToDo-list
-            </a>
-            <a
+            </Link>
+            <Link
               className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
               href="#"
             >
-              Work
-            </a>
+              Manage Users
+            </Link>
             <a
               className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
               href="#"

@@ -10,6 +10,8 @@ const Login = () => {
 
   const router = useRouter();
 
+  const { setLoggedIn, setCurrentUser} = useAppContext();
+
 
   //initialization
 
