@@ -1,9 +1,13 @@
+import Navbar from '@/components/Navbar'
 import { AppProvider } from '@/context/AppContext'
 import React from 'react'
 
 const Template = ({children}) => {
   return (
-    <AppProvider>{children}</AppProvider>
+    <AppProvider>
+      <Navbar />
+     {children}
+      </AppProvider>
   )
 }
 

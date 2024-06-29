@@ -5,6 +5,8 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import useAppContext from '@/context/AppContext';
+
 
 const Login = () => {
 
@@ -36,6 +38,9 @@ const Login = () => {
 
             localStorage.setItem('user', JSON.stringify(result.data)); //set local storage
             document.cookie = `token=${result.data.token}`;  //set cookie
+
+            setCurrentUser(result.data); //set current user
+            setLoggedIn(true); //set logged in
             router.push('/manage-users');
           }
           
